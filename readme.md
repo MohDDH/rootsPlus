@@ -16,22 +16,6 @@ RootsPlus supports a multi-tiered user structure, with access and functionality 
 - **Agronomist:** Expert users who can supervise multiple linked farms, log field activities, and provide detailed evaluations and seasonal guidance.
 - **Admin:** Possesses full administrative access, allowing for the management of users, farms, and all system-wide settings.
 
----
-
-## Screenshots
-
-- **Large screen view:**
-
- 1-  ![LS View 1](https://i.ibb.co/8DKG6rmt/Screenshot-29-9-2025-3838-127-0-0-1.jpg)
-  
- 2-   ![LS View 2](https://i.ibb.co/F1R2KmQ/Screenshot-29-9-2025-3914-127-0-0-1.jpg)
-
-**Mobile view:**
-
- ![MS View 1](https://i.ibb.co/5WWZpsd2/Screenshot-29-9-2025-31020-127-0-0-1.jpg)
-
-
----
 
 ## Key Features
 
@@ -47,6 +31,22 @@ The system's primary features include:
 
 ---
 
+---
+
+## Screenshots
+
+- **Large screen view:**
+
+   ![LS View 1](https://i.ibb.co/8DKG6rmt/Screenshot-29-9-2025-3838-127-0-0-1.jpg)
+  
+  ![LS View 2](https://i.ibb.co/F1R2KmQ/Screenshot-29-9-2025-3914-127-0-0-1.jpg)
+
+**Mobile view:**
+
+ ![MS View 1](https://i.ibb.co/5WWZpsd2/Screenshot-29-9-2025-31020-127-0-0-1.jpg)
+
+
+---
 
 
 
