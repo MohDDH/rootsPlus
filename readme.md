@@ -34,19 +34,6 @@ RootsPlus supports a multi-tiered user structure, with access and functionality 
 
 ---
 
-## Core Modules
-
-The platform is built around several interconnected modules designed to cover the full spectrum of farm management:
-
-- **Farm Management:** Functionality for adding, modifying, and associating farms with specific users.
-- **Crop Tracking:** Allows for the recording of detailed crop information, including planting dates, cultivated areas, and expected yields.
-- **Activity Logging:** A mechanism to track and log various agricultural activities, such as irrigation scheduling, fertilization applications, pest control measures, and harvesting operations.
-- **Evaluations and Reports:** Enables expert agronomists to submit formal farm evaluations and issue seasonal recommendations.
-- **Dashboard:** Provides a summarized view of key performance indicators, data visualizations (charts), and statistics tailored to the respective user role.
-- **Authentication:** Manages role-based login, security, and user session management.
-
----
-
 ## Technologies Used
 
 The following technologies and languages constitute the RootsPlus development stack:
