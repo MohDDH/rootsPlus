@@ -31,19 +31,6 @@ RootsPlus supports a multi-tiered user structure, with access and functionality 
  ![MS View 1](https://i.ibb.co/5WWZpsd2/Screenshot-29-9-2025-31020-127-0-0-1.jpg)
 
 
-
----
-
-## Technologies Used
-
-The following technologies and languages constitute the RootsPlus development stack:
-
-- **Backend:** Django (Python Web Framework)
-- **Frontend:** Bootstrap, AJAX, Chart.js
-- **Database:** MySQL
-- **Languages:** Python, HTML, CSS, JavaScript
-- **API Integration:** OpenWeather API for incorporating weather-based insights and generating alerts.
-
 ---
 
 ## Key Features
@@ -59,6 +46,21 @@ The system's primary features include:
 - Dynamic alert and notification system for immediate user feedback.
 
 ---
+
+
+
+
+## Technologies Used
+
+The following technologies and languages constitute the RootsPlus development stack:
+
+- **Backend:** Django (Python Web Framework)
+- **Frontend:** Bootstrap, AJAX, Chart.js
+- **Database:** MySQL
+- **Languages:** Python, HTML, CSS, JavaScript
+- **API Integration:** OpenWeather API for incorporating weather-based insights and generating alerts.
+
+
 
 ## Getting Started
 
