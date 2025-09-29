@@ -21,7 +21,7 @@ RootsPlus supports a multi-tiered user structure, with access and functionality 
 
 The system's primary features include:
 
-- Registration of new farms and dynamic user-farm linking.
+- User-Friendly Design: A clean, responsive UI tailored for clarity and simplicity across all devices and user roles.
 - Dashboards, interfaces, and functionalities are role-based. Each role sees a personalized experience tailored to their specific responsibilities.
 - Comprehensive logging and tracking of diverse agricultural activities.
 - Expert evaluation of farms and provision of technical recommendations.
@@ -58,7 +58,7 @@ The following technologies and languages constitute the RootsPlus development st
 - **Database:** MySQL
 - **Languages:** Python, HTML, CSS, JavaScript
 - **API Integration:** OpenWeather API for incorporating weather-based insights and generating alerts.
-- 
+  
 ---
 
 ## Getting Started
