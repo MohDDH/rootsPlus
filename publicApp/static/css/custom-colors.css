@@ -1,0 +1,406 @@
+/* ============================
+   🌿 RootsPlus Nature Palette
+   ============================ */
+
+/* 🎨 ألوان المشروع:
+   Primary:     #2F5249 (Deep Forest)
+   Secondary:   #437057 (Leaf Green)
+   Success:     #97B067 (Olive Mint)
+   Warning:     #E3DE61 (Earth Yellow)
+   Info:        #328E6E (Teal Accent)
+   Light:       #67AE6E (Soft Mint)
+   Extra Light: #90C67C (Pastel Green)
+   Background:  #E1EEBC (Misty Sand)
+*/
+
+/* ---------- الخلفيات ---------- */
+.bg-primary {
+  background-color: #2f5249 !important;
+}
+.bg-secondary {
+  background-color: #437057 !important;
+}
+.bg-success {
+  background-color: #97b067 !important;
+}
+.bg-warning {
+  background-color: #e3de61 !important;
+}
+.bg-info {
+  background-color: #328e6e !important;
+}
+.bg-light {
+  background-color: #eaf2eb !important;
+}
+.bg-extra {
+  background-color: #90c67c !important;
+}
+.bg-background {
+  background-color: #e1eebc !important;
+}
+.bg-dark {
+  background-color: #2b5a4f !important;
+}
+
+/* ---------- النصوص ---------- */
+.text-primary {
+  color: #2f5249 !important;
+}
+.text-secondary {
+  color: #437057 !important;
+}
+.text-success {
+  color: #97b067 !important;
+}
+.text-warning {
+  color: #e3de61 !important;
+}
+.text-info {
+  color: #328e6e !important;
+}
+.text-light {
+  color: #d8e3d9 !important;
+}
+.text-extra {
+  color: #90c67c !important;
+}
+.text-background {
+  color: #e1eebc !important;
+}
+.text-dark {
+  color: #2f5249 !important;
+}
+
+/* ---------- الأزرار ---------- */
+.btn-primary {
+  background-color: #2f5249 !important;
+  border-color: #2f5249 !important;
+  color: #e1eebc !important;
+}
+.btn-secondary {
+  background-color: #437057 !important;
+  border-color: #437057 !important;
+  color: #e1eebc !important;
+}
+.btn-success {
+  background-color: #97b067 !important;
+  border-color: #97b067 !important;
+  color: #fff !important;
+}
+.btn-warning {
+  background-color: #e3de61 !important;
+  border-color: #e3de61 !important;
+  color: #2f5249 !important;
+}
+.btn-info {
+  background-color: #328e6e !important;
+  border-color: #328e6e !important;
+  color: #fff !important;
+}
+.btn-light {
+  background-color: #67ae6e !important;
+  border-color: #67ae6e !important;
+  color: #2f5249 !important;
+}
+.btn-extra {
+  background-color: #90c67c !important;
+  border-color: #90c67c !important;
+  color: #2f5249 !important;
+}
+.btn-dark {
+  background-color: #2f5249 !important;
+  border-color: #2f5249 !important;
+  color: #2b5a4f !important;
+}
+
+/* ---------- الأزرار Outline ---------- */
+.btn-outline-primary {
+  color: #2f5249 !important;
+  border-color: #2f5249 !important;
+}
+.btn-outline-primary:hover {
+  background-color: #2f5249 !important;
+  color: #e1eebc !important;
+}
+
+.btn-outline-secondary {
+  color: #437057 !important;
+  border-color: #437057 !important;
+}
+.btn-outline-secondary:hover {
+  background-color: #437057 !important;
+  color: #e1eebc !important;
+}
+
+.btn-outline-success {
+  color: #97b067 !important;
+  border-color: #97b067 !important;
+}
+.btn-outline-success:hover {
+  background-color: #97b067 !important;
+  color: #fff !important;
+}
+
+.btn-outline-warning {
+  color: #e3de61 !important;
+  border-color: #e3de61 !important;
+}
+.btn-outline-warning:hover {
+  background-color: #e3de61 !important;
+  color: #2f5249 !important;
+}
+
+.btn-outline-info {
+  color: #328e6e !important;
+  border-color: #328e6e !important;
+}
+.btn-outline-info:hover {
+  background-color: #328e6e !important;
+  color: #fff !important;
+}
+
+.btn-outline-light {
+  color: #67ae6e !important;
+  border-color: #67ae6e !important;
+}
+.btn-outline-light:hover {
+  background-color: #67ae6e !important;
+  color: #2f5249 !important;
+}
+
+.btn-outline-extra {
+  color: #90c67c !important;
+  border-color: #90c67c !important;
+}
+.btn-outline-extra:hover {
+  background-color: #90c67c !important;
+  color: #2f5249 !important;
+}
+
+.btn-outline-dark {
+  color: #2b5a4f !important;
+  border-color: #2b5a4f !important;
+}
+.btn-outline-dark:hover {
+  background-color: #2b5a4f !important;
+  color: #e1eebc !important;
+}
+
+/* ---------- التنبيهات ---------- */
+.alert-primary {
+  background-color: #2f5249 !important;
+  color: #e1eebc !important;
+  border-color: #2f5249 !important;
+}
+.alert-secondary {
+  background-color: #437057 !important;
+  color: #e1eebc !important;
+  border-color: #437057 !important;
+}
+.alert-success {
+  background-color: #f0f7e8 !important;
+  color: #2f5249 !important;
+  border-color: #97b067 !important;
+}
+.alert-warning {
+  background-color: #fffee0 !important;
+  color: #2f5249 !important;
+  border-color: #e3de61 !important;
+}
+.alert-info {
+  background-color: #d1f2ec !important;
+  color: #2f5249 !important;
+  border-color: #328e6e !important;
+}
+.alert-light {
+  background-color: #eaf7ec !important;
+  color: #2f5249 !important;
+  border-color: #67ae6e !important;
+}
+.alert-extra {
+  background-color: #f3fbef !important;
+  color: #2f5249 !important;
+  border-color: #90c67c !important;
+}
+.alert-dark {
+  background-color: #2b5a4f !important;
+  color: #e1eebc !important;
+  border-color: #2b5a4f !important;
+}
+
+/* ---------- الإطارات ---------- */
+.border-primary {
+  border-color: #2f5249 !important;
+}
+.border-secondary {
+  border-color: #437057 !important;
+}
+.border-success {
+  border-color: #97b067 !important;
+}
+.border-warning {
+  border-color: #e3de61 !important;
+}
+.border-info {
+  border-color: #328e6e !important;
+}
+.border-light {
+  border-color: #67ae6e !important;
+}
+.border-extra {
+  border-color: #90c67c !important;
+}
+.border-background {
+  border-color: #e1eebc !important;
+}
+.border-dark {
+  border-color: #2f5249 !important;
+}
+
+/* ============================
+   ⚠️ Warning
+   ============================ */
+.btn-warning {
+  background-color: #e3de61 !important;
+  border-color: #e3de61 !important;
+  color: #2f5249 !important;
+  font-weight: 600;
+}
+.btn-warning:hover {
+  background-color: #d1c94f !important;
+  border-color: #d1c94f !important;
+  color: #fff !important;
+}
+.btn-outline-warning {
+  color: #e3de61 !important;
+  border-color: #e3de61 !important;
+}
+.btn-outline-warning:hover {
+  background-color: #e3de61 !important;
+  color: #2f5249 !important;
+}
+.alert-warning {
+  background-color: #fffee0 !important;
+  color: #2f5249 !important;
+  border-color: #e3de61 !important;
+}
+.border-warning {
+  border-color: #e3de61 !important;
+}
+.text-warning {
+  color: #e3de61 !important;
+}
+.bg-warning {
+  background-color: #dedb94 !important;
+}
+
+/* ============================
+   ❌ Danger
+   ============================ */
+.btn-danger {
+  background-color: #b94c4c !important;
+  border-color: #b94c4c !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+.btn-danger:hover {
+  background-color: #993939 !important;
+  border-color: #993939 !important;
+  color: #fff !important;
+}
+.btn-outline-danger {
+  color: #b94c4c !important;
+  border-color: #b94c4c !important;
+}
+.btn-outline-danger:hover {
+  background-color: #b94c4c !important;
+  color: #fff !important;
+}
+.alert-danger {
+  background-color: #fbeaea !important;
+  color: #5c2f2f !important;
+  border-color: #b94c4c !important;
+}
+.border-danger {
+  border-color: #b94c4c !important;
+}
+.text-danger {
+  color: #b94c4c !important;
+}
+.bg-danger {
+  background-color: #b94c4c !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.card {
+  transition: all ease-in;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.navigation {
+  background: linear-gradient(to right, #f8fff4, #e6f7e6);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 99;
+  background-color: #dc9824;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.glass-section {
+  position: relative;
+  background: url("https://i.ibb.co/YFKHx8BN/high-angle-farmland-view.jpg")
+    no-repeat center center/cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(138, 174, 157, 0.45);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.glass-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media print {
+  .btn,
+  .alert,
+  nav,
+  footer {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+}
+
+
+

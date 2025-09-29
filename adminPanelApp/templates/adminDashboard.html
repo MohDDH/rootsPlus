@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-4">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w-75 alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show mb-3 mx-auto"
+        role="alert">
+        <i class="bi bi-info-circle me-2"></i> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+    <h2 class="mb-4"><i class="bi bi-speedometer2 me-2"></i> Admin Dashboard</h2>
+
+
+    <!-- Stats Cards -->
+    <!-- First Row-->
+    <div class="row mb-4 g-3 justify-content-center">
+        <!-- Users -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-people fs-3 text-primary"></i>
+                    <h5 class="counter" data-target="{{ stats.users_count }}">0</h5>
+                    <p class="mb-0">Users</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agronomists -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-person-badge fs-3 text-success"></i>
+                    <h5 class="counter" data-target="{{ stats.agronomists_count }}">0</h5>
+                    <p class="mb-0">Agronomists</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Farms -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-tree fs-3 text-secondary"></i>
+                    <h5 class="counter" data-target="{{ stats.farms_count }}">0</h5>
+                    <p class="mb-0">Farms</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crops -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-flower1 fs-3 text-danger"></i>
+                    <h5 class="counter" data-target="{{ stats.crops_count }}">0</h5>
+                    <p class="mb-0">Crops</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row-->
+    <div class="row mb-4 g-3 justify-content-center">
+        <!-- Activities -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-list-task fs-3 text-info"></i>
+                    <h5 class="counter" data-target="{{ stats.activities_count }}">0</h5>
+                    <p class="mb-0">Activities</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evaluations -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-clipboard-check fs-3 text-secondary"></i>
+                    <h5 class="counter" data-target="{{ stats.evaluations_count }}">0</h5>
+                    <p class="mb-0">Evaluations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports -->
+        <div class="col-6 col-md-3">
+            <div class="card text-center shadow-sm border border-3">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-text fs-3 text-dark"></i>
+                    <h5 class="counter" data-target="{{ stats.reports_count }}">0</h5>
+                    <p class="mb-0">Reports</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- Agronomists Section -->
+    <h4 class="mt-5 "><i class="bi bi-person-badge me-2 text-success"></i> Agronomists</h4>
+    <div class="row g-3 mt-3">
+        {% for agronomist in agronomists %}
+        <div class="col-12 col-md-3">
+            <div class="card shadow-sm h-100 ">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-workspace fs-1 text-success"></i>
+                    <h5 class="mt-2">{{ agronomist.name }}</h5>
+                    <p class="text-muted mb-1"><i class="bi bi-phone me-1"></i> {{ agronomist.phone }}</p>
+                    <p class="text-muted mb-1"><i class="bi bi-envelope me-1"></i> {{ agronomist.email }}</p>
+                    <p class="mb-0"><i class="bi bi-house-door me-1"></i> Farms
+                        Managed: {{agronomist.managed_farms.count }}</p>
+
+
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted">No agronomists found.</p>
+        {% endfor %}
+    </div>
+    <hr>
+    <!-- Farmers Section -->
+    <h4 class="mt-5 "><i class="bi bi-people me-2 text-primary"></i> Farmers</h4>
+    <div class="row g-3 mt-3">
+        {% for farmer in users %}
+        <div class="col-12 col-md-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-circle fs-1 text-primary"></i>
+                    <h5 class="mt-2">{{ farmer.name }}</h5>
+                    <p class="text-muted mb-1"><i class="bi bi-envelope me-1"></i> {{ farmer.email }}</p>
+                    <p class="text-muted mb-1"><i class="bi bi-phone me-1"></i> {{ farmer.phone }}</p>
+                    <p class="mb-0"><i class="bi bi-tree me-1"></i> Farms Owned: {{ farmer.farms.count }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted">No farmers found.</p>
+        {% endfor %}
+    </div>
+    <hr>
+    <!-- Latest Activities -->
+    <h4 class="mt-4"><i class="bi bi-list-task me-2"></i> Latest Activities</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle text-center mt-3">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Type</th>
+                    <th>Crop</th>
+                    <th>Date</th>
+                    <th>Agronomist</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for activity in activities %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ activity.get_activity_type_display }}</td>
+                    <td>{{ activity.crop.crop_name }}</td>
+                    <td>{{ activity.date|date:"Y-m-d H:i" }}</td>
+                    <td>{{ activity.agronomist.name }}</td>
+                    <td>
+                        <!-- ما عندك detail/edit/delete للأنشطة -->
+                        <a href="{% url 'rootsPlusApp:farm_activities' activity.farm.id %}" class="btn btn-sm btn-info">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        <a href="{% url 'rootsPlusApp:add_activity' activity.farm.id %}" class="btn btn-sm btn-warning">
+                            <i class="bi bi-plus-circle"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No activities yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <!-- Latest Evaluations -->
+    <h4 class="mt-4"><i class="bi bi-clipboard-check me-2"></i> Latest Evaluations</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle text-center mt-3">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Farm</th>
+                    <th>Agronomist</th>
+                    <th>Date</th>
+                    <th style="width: 420px;">Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evaluation in evaluations %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ evaluation.farm.name }}</td>
+                    <td>{{ evaluation.agronomist.name }}</td>
+                    <td>{{ evaluation.created_at|date:"Y-m-d" }}</td>
+                    <td>{{ evaluation.recommendations|default:"—" }}</td>
+                    <td>
+                        <a href="{% url 'rootsPlusApp:evaluation_detail' evaluation.id %}"
+                            class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a>
+                        <a href="{% url 'rootsPlusApp:edit_evaluation' evaluation.id %}"
+                            class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
+                        <a href="{% url 'rootsPlusApp:delete_evaluation' evaluation.id %}" class="btn btn-sm btn-danger"
+                            onclick="return confirm('Are you sure?');"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No evaluations yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <!-- Latest Reports -->
+    <h4 class="mt-4"><i class="bi bi-file-earmark-text me-2"></i> Latest Reports</h4>
+    <div class="table-responsive ">
+        <table class="table table-bordered table-hover align-middle text-center mt-3">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Farm</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th style="width: 420px;">Summary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ report.farm.name }}</td>
+                    <td>{{ report.author.name }}</td>
+                    <td>{{ report.generated_at|date:"Y-m-d" }}</td>
+                    <td>{{ report.summary|default:"—" }}</td>
+                    <td>
+                        <a href="{% url 'rootsPlusApp:report_detail' report.farm.id report.id %}"
+                            class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a>
+                        <a href="{% url 'rootsPlusApp:edit_report' report.farm.id report.id %}"
+                            class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
+                        <a href="{% url 'rootsPlusApp:delete_report' report.farm.id report.id %}"
+                            class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?');"><i
+                                class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No reports yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll('.counter');
+        const duration = 600; // مدة الحركة (بالمللي ثانية)
+
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const startTime = performance.now();
+
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // دالة easing (easeOutQuad)
+                const easeOutQuad = (t) => t * (3 - t);
+
+                const easedProgress = easeOutQuad(progress);
+                const currentValue = Math.floor(easedProgress * target);
+
+                counter.innerText = currentValue;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            requestAnimationFrame(animate);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}RootsPlus | Get Started{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="glass-section text-white text-center py-5 ">
+  <div class="container shadow rounded-3 py-4 w-75 w-md-50">
+    <h1 class="display-4 fw-bold">Welcome to RootsPlus</h1>
+    <p class="lead">Connecting farmers and agronomists for a smarter, sustainable agriculture future.</p>
+    {% if role == 'guest' %}
+    <a href="{% url 'loginRegisterApp:loginAccount' role='user' %}" class="btn btn-outline-dark  btn-lg mt-3">Get
+      Started</a>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-white border-success">
+      <div class="modal-header">
+        <h5 class="modal-title" id="welcomeModalLabel">
+          <i class="bi bi-tree-fill me-2 text-info"></i> Welcome to RootsPlus
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <i class="fa-solid fa-seedling fa-3x text-info mb-3"></i>
+        <h4 class="mb-3">Empowering Farmers with Smart, Sustainable Solutions</h4>
+        <p class="lead text-muted">
+          RootsPlus is your trusted partner in agricultural innovation.
+          We blend technology and nature to help your farm thrive.
+        </p>
+        <p class="fw-bold text-info mt-4">
+          <i class="bi bi-leaf"></i> Let us care for your farm, so you don’t have to worry about your production
+        </p>
+      </div>
+
+      <div class="modal-footer justify-content-center">
+        <a href="{% url 'loginRegisterApp:registerAccount' role='user' %}" class="btn btn-outline-info">
+          <i class="fa-solid fa-user-plus me-2"></i> Join Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div class="mb-3 text-primary fs-1">
+              <i class="bi bi-bar-chart-line"></i>
+            </div>
+            <h5 class="card-title fw-bold">Farm Monitoring</h5>
+            <p class="card-text">Track crop growth, soil health, and weather conditions in real-time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div class="mb-3 text-success fs-1">
+              <i class="bi bi-leaf text-success fs-3"></i>
+            </div>
+            <h5 class="card-title fw-bold">Expert Consultation</h5>
+            <p class="card-text">Get advice from certified agronomists to boost your farm’s productivity.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div class="mb-3 text-danger fs-1">
+              <i class="bi bi-people"></i>
+            </div>
+            <h5 class="card-title fw-bold">Community Support</h5>
+            <p class="card-text">Join a network of farmers and experts sharing knowledge and resources.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-light py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold text-primary">Ready to grow smarter?</h2>
+    <p class="mb-4">Sign up today and take your farming to the next level.</p>
+    {% if role == 'guest' %}
+    <a href="{% url 'loginRegisterApp:loginAccount' role='user' %}" class="btn btn-outline-primary btn-lg">Join Now</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+
+
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+    welcomeModal.show();
+  });
+</script>
+{% endblock %}

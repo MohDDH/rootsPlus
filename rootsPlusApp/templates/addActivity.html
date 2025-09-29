@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Add Activity{% endblock %}
+
+{% block content %}
+<div class="container py-4 col-md-7 shadow-sm border rounded">
+    <h4 class="mb-4">Add New Activity for {{ farm.name }}</h4>
+
+    <!-- Django Messages -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w-75 alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show mb-3"
+        role="alert">
+        <i class="bi bi-info-circle me-2"></i> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+    <!-- End Django Messages -->
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="activity_type" class="form-label">Activity Type</label>
+            <select name="activity_type" id="activity_type" class="form-select" required>
+                {% for value, label in activity_types %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="crop_id" class="form-label">Crop</label>
+            <select name="crop_id" id="crop_id" class="form-select text-dark bg-white" required>
+                <option value="" disabled selected>Choose a crop</option>
+                {% for crop in crops %}
+                <option value="{{ crop.id }}" class="text-dark">{{ crop.crop_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="datetime-local" name="date" id="date" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="notes" class="form-label">Notes</label>
+            <textarea name="notes" id="notes" class="form-control" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Activity</button>
+    </form>
+</div>
+{% endblock %}

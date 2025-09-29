@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Add Crops to {{ farm.name }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h3 class="mb-4">Add Crops to {{ farm.name }}</h3>
+
+    <!-- Django Messages -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w-75 alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show mb-3"
+        role="alert">
+        <i class="bi bi-info-circle me-2"></i> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+    <!-- End Django Messages -->
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" id="farmArea" value="{{ farm.total_area }}">
+
+        <div id="cropContainer" class="d-flex flex-wrap justify-content-start align-items-start gap-3">
+
+            <div class="crop-row border p-3 mb-3" style="width: 520px;">
+                <input type="text" name="crop_name[]" placeholder="Crop Name" class="form-control mb-2" required>
+                <input type="number" name="crop_area[]" placeholder="Crop Area (dunum)" step="0.01"
+                    class="form-control mb-2" required>
+                <div class="form-floating mb-2">
+                    <input type="date" name="planting_date[]" class="form-control" id="plantingDate">
+                    <label for="plantingDate">Crop Planting Date</label>
+                </div>
+                <input type="number" name="yield_per_dunum[]" placeholder="Yield per dunum" step="0.01"
+                    class="form-control mb-2">
+                <input type="text" name="status[]" placeholder="Status" class="form-control mb-2">
+                <button type="button" class="btn btn-danger btn-sm remove-row">Remove</button>
+            </div>
+        </div>
+
+        <button type="button" id="addCropBtn" class="btn btn-secondary mt-3">+ Add Another Crop</button>
+        <button type="submit" class="btn btn-success mt-3">Save Crops</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const farmArea = parseFloat(document.getElementById('farmArea').value);
+        const form = document.querySelector('form');
+        const addBtn = document.getElementById('addCropBtn');
+        const container = document.getElementById('cropContainer');
+
+        // إضافة صف جديد
+        addBtn.addEventListener('click', function () {
+            const newRow = container.children[0].cloneNode(true);
+            newRow.querySelectorAll('input').forEach(input => input.value = '');
+            container.appendChild(newRow);
+        });
+
+        // حذف صف
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-row')) {
+                const rows = document.querySelectorAll('.crop-row');
+                if (rows.length > 1) {
+                    e.target.closest('.crop-row').remove();
+                }
+            }
+        });
+
+        // تحقق من المساحة قبل الإرسال
+        form.addEventListener('submit', function (e) {
+            let totalCropArea = 0;
+            const areaInputs = document.querySelectorAll('input[name="crop_area[]"]');
+
+            for (let i = 0; i < areaInputs.length; i++) {
+                const value = parseFloat(areaInputs[i].value);
+                if (!isNaN(value)) {
+                    totalCropArea += value;
+                }
+            }
+
+            if (totalCropArea > farmArea) {
+                e.preventDefault();
+                alert("Total crop area (" + totalCropArea + ") exceeds farm capacity (" + farmArea + ").");
+            }
+        });
+    });
+</script>
+{% endblock %}

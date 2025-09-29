@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}Report Details{% endblock %}
+
+{% block content %}
+<div class="container py-4 col-md-7">
+
+    <!-- Django Messages -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w-75 alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show mb-3"
+        role="alert">
+        <i class="bi bi-info-circle me-2"></i> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+    <!-- End Django Messages -->
+
+    <h4 class="mb-5 text-light bg-secondary p-3 rounded shadow-sm">
+        <i class="bi bi-clipboard-data me-1"></i> Farm Report – {{ report.farm.name }}
+    </h4>
+
+
+    <div class="card mb-4 shadow-sm border-0">
+        <div class="card-body">
+            <p><strong>Season:</strong> {{ report.season|default:"-" }}</p>
+            <p><strong>Generated At:</strong> {{ report.generated_at|date:"Y-m-d H:i" }}</p>
+            <p><strong>Overall Score:</strong>
+                <span class="badge bg-info text-dark">{{ report.overall_score|default:"-" }}</span>
+            </p>
+            <p><strong>Status:</strong>
+                {% if report.status == "Final" %}
+                <span class="badge bg-success">Final</span>
+                {% else %}
+                <span class="badge bg-secondary">Draft</span>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+
+    <h5 class="mb-2 border-bottom pb-1">Farm Info Summary</h5>
+    <pre class="bg-light p-3 rounded border">{{ report.summary|default:"No summary provided." }}</pre>
+
+
+    <h5 class="mt-4 border-bottom pb-1">Recommendations</h5>
+    {% if report.recommendations %}
+    <ul class="list-group list-group-flush shadow-sm">
+        {% for line in report.recommendations.splitlines %}
+        {% if line %}
+        <li class="list-group-item">{{ line }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-muted fst-italic">No recommendations provided.</p>
+    {% endif %}
+
+
+    {% if report.notes %}
+    <h5 class="mt-4 border-bottom pb-1">Notes</h5>
+    <ul class="list-group list-group-flush shadow-sm">
+        {% for line in report.notes.splitlines %}
+        {% if line %}
+        <li class="list-group-item">
+            <i class="bi bi-check2-circle me-1 text-success"></i> {{ line }}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+
+    {% endif %}
+
+
+    {% if report.file %}
+    <a href="{{ report.file.url }}" class="btn btn-outline-secondary mt-4" download>
+        <i class="bi bi-download me-1"></i> Download Report File
+    </a>
+    {% endif %}
+
+
+    <div class="text-end mt-5 pe-3">
+        <p class="mb-0 text-danger fst-italic pe-4">Approved by:</p>
+        <p class="fw-bold fs-5">Eng. {{ report.author.name }}</p>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-wrap gap-2">
+        <a href="{% url 'rootsPlusApp:reports_list' report.farm.id %}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left-circle me-1"></i> Back to Reports
+        </a>
+        <button onclick="window.print()" class="btn btn-outline-danger">
+            <i class="bi bi-printer me-1"></i> Print Report
+        </button>
+
+        <a href="{% url 'rootsPlusApp:report_export_csv' report.farm.id report.id %}" class="btn btn-outline-info">
+            <i class="bi bi-file-earmark-spreadsheet me-1"></i> Export as CSV
+        </a>
+
+
+    </div>
+
+
+</div>
+{% endblock %}

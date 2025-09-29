@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Evaluation Details{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+
+    <!-- Django Messages -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w-75 alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show mb-3"
+        role="alert">
+        <i class="bi bi-info-circle me-2"></i> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+    <!-- End Django Messages -->
+
+    <h4 class="mb-4"> <i class="bi bi-file-earmark-text-fill me-2 text-primary"></i> Evaluation – {{
+        evaluation.season|default:"Season Unknown" }}</h4>
+
+    <div class="card shadow-sm col-12 col-md-8">
+        <div class="card-body px-4">
+            <h5 class="text-success">{{ evaluation.farm.name }}</h5>
+            <p><strong>Agronomist:</strong> {{ evaluation.agronomist.name }}</p>
+            <p><strong>Date:</strong> {{ evaluation.created_at|date:"Y-m-d" }}</p>
+
+            <hr>
+            <h6><i class="bi bi-bar-chart-fill me-2 text-info"></i> Production Data</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 px-4">
+                <li>Total Yield: <strong>{{ evaluation.yield_amount|default:"—" }} tons</strong></li>
+                <li>Crops Count: <strong>{{ evaluation.crops_count|default:"—" }}</strong></li>
+                <li>Avg Yield/Dunum: <strong>{{ evaluation.average_yield_per_dunum|default:"—" }} tons</strong></li>
+            </ul>
+            <hr>
+            <h6><i class="bi bi-check2-circle me-2 text-success"></i> Performance Scores</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 px-4">
+                <li>Activity Score: <strong>{{ evaluation.activity_score|default:"—" }}</strong></li>
+                <li>Cost Efficiency: <strong>{{ evaluation.cost_efficiency|default:"—" }}</strong></li>
+                <li>Total Cost: <strong>{{ evaluation.total_cost|default:"—" }} EGP</strong></li>
+                <li>Overall Score: <strong>{{ evaluation.overall_score|default:"—" }}</strong></li>
+            </ul>
+            <hr>
+            <h6 class="mb-0"><i class="bi bi-lightbulb-fill me-2 text-warning"></i> Recommendations</h6>
+            <p class="px-4">{{ evaluation.recommendations|default:"No recommendations provided."|linebreaksbr }}</p>
+
+            <div class="mt-4 d-flex justify-content-end">
+                <a href="{% url 'rootsPlusApp:evaluations_list' evaluation.farm.id %}"
+                    class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left-circle me-1"></i> Back to Evaluations
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

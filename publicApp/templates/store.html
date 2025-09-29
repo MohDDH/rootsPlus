@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block title %}RootsPlus Store{% endblock %}
+
+{% block content %}
+
+<!-- Section Navigation -->
+<div class=" navigation d-flex justify-content-center flex-wrap gap-4 mb-5 bg-light p-2 shadow-sm">
+    <a href="#fertilizers" class="btn btn-outline-success btn-sm px-4">Fertilizers</a>
+    <a href="#pesticides" class="btn btn-outline-success btn-sm px-4">Pesticides</a>
+    <a href="#tools" class="btn btn-outline-success btn-sm px-4">Tools</a>
+    <a href="#seedlings" class="btn btn-outline-success btn-sm px-4">Seedlings</a>
+</div>
+
+<div class="container py-5">
+    <h1 class="text-center mb-4"><i class="bi bi-shop"></i> Agricultural Store</h1>
+    <p class="text-center text-muted mb-5">Fertilizers • Pesticides • Tools • Seedlings</p>
+
+    <!-- Fertilizers -->
+    <h3 id="fertilizers" class="mb-4 text-center py-2"><i class="bi bi-droplet-half text-success"></i> Fertilizers</h3>
+    <div class="row g-4 justify-content-center">
+        {% for i in "123" %}
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="https://i.ibb.co/5xfKqNv2/vektor-illustration-fertilizer-bag-rice-sack-sand-bag-agriculture-product-isolated-734922-15.png"
+                    class="card-img-top" alt="Fertilizer">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Organic Fertilizer</h5>
+                    <p class="card-text text-muted small">Boosts soil health and crop yield.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success rounded-pill px-3 py-2">$25</span>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Contact
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="https://wa.me/201234567890?text=Hello,%20I%20am%20interested%20in%20Organic%20Fertilizer"
+                                    target="_blank">
+                                    <i class="bi bi-whatsapp text-success"></i> WhatsApp
+                                </a></li>
+                            <li><a class="dropdown-item"
+                                    href="mailto:info@agrostore.com?subject=Inquiry%20about%20Organic%20Fertilizer">
+                                    <i class="bi bi-envelope text-primary"></i> Email
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pesticides -->
+    <h3 id="pesticides" class="mt-5 mb-4 text-center"><i class="bi bi-bug text-danger"></i> Pesticides</h3>
+    <div class="row g-4 justify-content-center">
+        {% for i in "345" %}
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="https://i.ibb.co/jks8VmLX/pesticide-vector-fill-outline-icon-design-illustration-agriculture-symbol-on-white.png"
+                    class="card-img-top" alt="Pesticide">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Eco-Friendly Pesticide</h5>
+                    <p class="card-text text-muted small">Protects crops from harmful insects without damaging the soil.
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success rounded-pill px-3 py-2">$18</span>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Contact
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="https://wa.me/201234567890?text=Hello,%20I%20am%20interested%20in%20Eco-Friendly%20Pesticide"
+                                    target="_blank">
+                                    <i class="bi bi-whatsapp text-success"></i> WhatsApp
+                                </a></li>
+                            <li><a class="dropdown-item"
+                                    href="mailto:info@agrostore.com?subject=Inquiry%20about%20Eco-Friendly%20Pesticide">
+                                    <i class="bi bi-envelope text-primary"></i> Email
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Tools -->
+    <h3 id="tools" class="mt-5 mb-4 text-center"><i class="bi bi-tools text-dark"></i> Agricultural Tools</h3>
+    <div class="row g-4 justify-content-center">
+        {% for i in "678" %}
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="https://www.pngmart.com/files/7/Gardening-PNG-Free-Download.png" class="card-img-top"
+                    alt="Tool">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Hand Trowel</h5>
+                    <p class="card-text text-muted small">Durable hand tool for planting, transplanting, and soil
+                        preparation.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success rounded-pill px-3 py-2">$7</span>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Contact
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="https://wa.me/201234567890?text=Hello,%20I%20am%20interested%20in%20Hand%20Trowel"
+                                    target="_blank">
+                                    <i class="bi bi-whatsapp text-success"></i> WhatsApp
+                                </a></li>
+                            <li><a class="dropdown-item"
+                                    href="mailto:info@agrostore.com?subject=Inquiry%20about%20Hand%20Trowel">
+                                    <i class="bi bi-envelope text-primary"></i> Email
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- S -->
+    <h3 id="seedlings" class="mt-5 mb-4 text-center"><i class="bi bi-flower1 text-warning"></i> Seedlings</h3>
+    <div class="row g-4 justify-content-center">
+        {% for i in "456" %}
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/045/592/391/small_2x/four-young-seedlings-growing-in-individual-pots-on-a-transparent-background-png.png"
+                    class="card-img-top" alt="Seedling">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tomato Seedlings</h5>
+                    <p class="card-text text-muted small">Ready for transplanting into your farm or garden.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success rounded-pill px-3 py-2">$12</span>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Contact
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="https://wa.me/201234567890?text=Hello,%20I%20am%20interested%20in%20Tomato%20Seedlings"
+                                    target="_blank">
+                                    <i class="bi bi-whatsapp text-success"></i> WhatsApp
+                                </a></li>
+                            <li><a class="dropdown-item"
+                                    href="mailto:info@agrostore.com?subject=Inquiry%20about%20Tomato%20Seedlings">
+                                    <i class="bi bi-envelope text-primary"></i> Email
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Friendly Message -->
+    <div class="text-center mt-5 bg-light p-4 shadow-sm rounded">
+        <small class="text-muted d-block">
+            We’re happy to connect with you and look forward to building great work together.
+        </small>
+        <small class="text-muted d-block mt-2">
+            <i class="bi bi-envelope text-danger"></i> Email or
+            <i class="bi bi-whatsapp text-success"></i> WhatsApp are both available for contact —
+            or visit our <a href="#" class="text-decoration-none text-primary fw-semibold">Contact</a> page.
+        </small>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button type="button" id="btn-back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script>
+        let backToTopBtn = document.getElementById("btn-back-to-top");
+        window.onscroll = function () {
+            backToTopBtn.style.display = (window.scrollY > 200) ? "block" : "none";
+        };
+        backToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</div>
+{% endblock %}
