@@ -47,7 +47,7 @@ The platform is built around several interconnected modules designed to cover th
 
 ---
 
-## Technical Stack
+## Technologies Used
 
 The following technologies and languages constitute the RootsPlus development stack:
 
