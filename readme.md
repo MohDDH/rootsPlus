@@ -28,9 +28,9 @@ RootsPlus supports a multi-tiered user structure, with access and functionality 
 
 **Mobile view:**
 
-1- ![MS View 1](https://i.ibb.co/5WWZpsd2/Screenshot-29-9-2025-31020-127-0-0-1.jpg)
+ ![MS View 1](https://i.ibb.co/5WWZpsd2/Screenshot-29-9-2025-31020-127-0-0-1.jpg)
 
-2- ![MS View 2](https://i.ibb.co/wFHqcRFC/Screenshot-29-9-2025-3957-127-0-0-1.jpg)
+
 
 ---
 
