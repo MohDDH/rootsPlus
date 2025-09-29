@@ -4,7 +4,9 @@
 
 ## Project Overview
 
-**RootsPlus** is a proposed idea for an agricultural company that is interested in technology or wants to move towards digital transformation. The company has many agronomists who follow up on the farming activities of the farms connected to it. Each farm receives activities, evaluations, and reports. The farm owner can regularly check these updates to stay informed and make better decisions.
+**RootsPlus** is a proposed idea for an agricultural company that is interested in technology or wants to move towards digital transformation. The company has many agronomists who follow up on the farming activities of the farms connected to it. Each farm receives activities, evaluations, and reports. 
+The farm owner can regularly check these updates to stay informed and make better decisions.
+
 ---
 
 ## Main Roles
