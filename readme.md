@@ -4,8 +4,7 @@
 
 ## Project Overview
 
-**RootsPlus** is a proposed idea for an agricultural company that is interested in technology or wants to move towards digital transformation. The company has many agronomists who follow up on the farming activities of the farms connected to it. For each farm, they create activities, evaluations, and reports. The farm owner can view these updates regularly and stay informed.
-
+**RootsPlus** is a proposed idea for an agricultural company that is interested in technology or wants to move towards digital transformation. The company has many agronomists who follow up on the farming activities of the farms connected to it. Each farm receives activities, evaluations, and reports. The farm owner can regularly check these updates to stay informed and make better decisions.
 ---
 
 ## Main Roles
@@ -57,7 +56,7 @@ The following technologies and languages constitute the RootsPlus development st
 - **Frontend:** Bootstrap, AJAX, Chart.js
 - **Database:** MySQL
 - **Languages:** Python, HTML, CSS, JavaScript
-- **API Integration:** OpenWeather API for incorporating weather-based insights and generating alerts.
+- **API Integration:** OpenWeatherMap API for incorporating weather-based insights and generating alerts.
   
 ---
 
