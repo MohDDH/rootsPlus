@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-**RootsPlus** is a proposed concept for an agricultural technology company dedicated to transforming farm management. The platform is designed to bridge the gap between farmers and agronomists by providing **smart tools, actionable insights,** and a supportive ecosystem to promote agricultural success. Its core mission is to make farming smarter, more sustainable, and more profitable by connecting expert agricultural knowledge with real-world farming needs.
+**RootsPlus** is a proposed idea for an agricultural company that is interested in technology or wants to move towards digital transformation. The company has many agronomists who follow up on the farming activities of the farms connected to it. For each farm, they create activities, evaluations, and reports. The farm owner can view these updates regularly and stay informed.
 
 ---
 
@@ -12,8 +12,8 @@
 
 RootsPlus supports a multi-tiered user structure, with access and functionality tailored for specific roles:
 
-- **Farmer:** Users can register farms, manage crop cycles, and receive targeted recommendations for their agricultural operations.
-- **Agronomist:** Expert users who can supervise multiple linked farms, log field activities, and provide detailed evaluations and seasonal guidance.
+- **Farmer:** Users can register farms, add and edit crops to their farm, and receive recommendations for their agricultural operations.
+- **Agronomist:** Expert users who can supervise multiple linked farms, log field activities, and provide detailed evaluations and seasonal reports.
 - **Admin:** Possesses full administrative access, allowing for the management of users, farms, and all system-wide settings.
 
 
@@ -22,6 +22,7 @@ RootsPlus supports a multi-tiered user structure, with access and functionality 
 The system's primary features include:
 
 - Registration of new farms and dynamic user-farm linking.
+- Dashboards, interfaces, and functionalities are role-based. Each role sees a personalized experience tailored to their specific responsibilities.
 - Comprehensive logging and tracking of diverse agricultural activities.
 - Expert evaluation of farms and provision of technical recommendations.
 - Generation of seasonal performance reports for individual farms.
@@ -31,7 +32,6 @@ The system's primary features include:
 
 ---
 
----
 
 ## Screenshots
 
@@ -49,7 +49,6 @@ The system's primary features include:
 ---
 
 
-
 ## Technologies Used
 
 The following technologies and languages constitute the RootsPlus development stack:
@@ -59,8 +58,8 @@ The following technologies and languages constitute the RootsPlus development st
 - **Database:** MySQL
 - **Languages:** Python, HTML, CSS, JavaScript
 - **API Integration:** OpenWeather API for incorporating weather-based insights and generating alerts.
-
-
+- 
+---
 
 ## Getting Started
 
